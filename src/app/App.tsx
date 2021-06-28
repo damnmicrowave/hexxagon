@@ -36,6 +36,11 @@ const generateEmptyGrid = (width: number): CellsGrid => {
     grid[`${halfWidth * q_dir}${halfWidth * r_dir}`].state =
       index % 2 === 0 ? 'white' : 'black'
   })
+
+  // remove 3 center cells
+  delete grid['0-1']
+  delete grid['10']
+  delete grid['-11']
   return grid
 }
 
